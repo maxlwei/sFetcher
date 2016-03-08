@@ -6,7 +6,10 @@ block content
     .controls
       label#active-me.checkbox Test-data?
       input(type="hidden", name="test", value=0)
-      input(type="checkbox", name="test", id="test")
+      if title == "Sample Data"
+        input(type="checkbox", name="test", id="test", checked="checked")
+      else
+        input(type="checkbox", name="test", id="test")
     | UserID: &nbsp
     if userID == ""
       input(type='text', name='userID', value='testUserT4')

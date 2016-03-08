@@ -33,10 +33,14 @@ app.post('/request', function(req, res) {
   var userID = req.body.userID;
   var domain = req.body.domain;
   var test = req.body.test;
+  var title = "Server Request"
   debug("test is a " + typeof test['checked'])
   var url = 'http://btdemo.plurilock.com:8090/api/users/ios_' + userID + '_' + domain;
   if (test.hasOwnProperty(1)) {
     url = 'http://btdemo.plurilock.com:8090/api/users/web_bassam_plurilock';
+    userID = "----"
+    domain = "----"
+    title = "Sample Data"
   }
   var result = "";
 
@@ -54,7 +58,7 @@ app.post('/request', function(req, res) {
       
       
       res.render('request', {
-        title: 'Server Request',
+        title:  title,
         userID: userID,
         domain: domain,
         result: result
@@ -63,7 +67,7 @@ app.post('/request', function(req, res) {
     } else {
       debug("What's this? " + response.statusCode)
       res.render('request', {
-        title: 'Server Request',
+        title:  title,
         userID: userID,
         domain: domain,
         result: "Error: " + response.statusCode + ", Data not retrieved"
