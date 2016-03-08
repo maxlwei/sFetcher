@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  form(action="request" method='post')
+    .controls
+      label#active-me.checkbox Test-data?
+      input(type="hidden", name="test", value=0)
+      input(type="checkbox", name="test", id="test")
+    | UserID: &nbsp
+    if userID == ""
+      input(type='text', name='userID', value='testUserT4')
+    else 
+      input(type='text', name='userID', value=userID)
+    | &nbsp Domain: &nbsp
+    if domain == ""
+      input(type='text', name='domain', value='testDomainT4')
+    else
+      input(type='text', name='domain', value=domain)
+    | &nbsp 
+    input(type='submit', value='Request Info')
+  p.
+  - var header1 = "Request: " + userID + ", " + domain
+  h2= header1
+  div= result
+  

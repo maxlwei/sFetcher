@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  form(action="request" method='post')
+    .controls
+      label#active-me.checkbox Test-data?
+      input(type="hidden", name="test", value=0)
+      input(type="checkbox", name="test", id="test",checked='checked')
+    | UserID: &nbsp
+    input(type='text', name='userID', value='testUserT4')
+    | &nbsp Domain: &nbsp
+    input(type='text', name='domain', value='testDomainT4')
+    | &nbsp 
+    input(type='submit', value='Request Info')
