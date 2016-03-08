@@ -54,7 +54,7 @@ app.post('/request', function(req, res) {
       
       
       res.render('request', {
-        title: 'Server Request' 
+        title: 'Server Request',
         userID: userID,
         domain: domain,
         result: result
@@ -63,7 +63,7 @@ app.post('/request', function(req, res) {
     } else {
       debug("What's this? " + response.statusCode)
       res.render('request', {
-        title: 'Server Request' 
+        title: 'Server Request',
         userID: userID,
         domain: domain,
         result: "Error: " + response.statusCode + ", Data not retrieved"
